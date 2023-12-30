@@ -1,0 +1,1 @@
+# GAS template for Clasp
