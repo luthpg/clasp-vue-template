@@ -52,4 +52,3 @@ declare const google: {
     };
   };
 };
-
