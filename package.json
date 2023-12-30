@@ -1,47 +1,55 @@
 {
-  "name": "clasp-simple-template",
-  "version": "0.0.1",
-  "description": "template for Google Apps Script in Local Env (simple style)",
-  "main": "app.js",
+  "name": "clasp-vite-vue-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "push": "clasp push",
-    "push:watch": "clasp push --watch",
-    "tsc": "tsc --noEmit",
-    "test": "jest --silent=true --coverage",
-    "test:log": "jest --coverage"
+    "dev": "vite",
+    "tsc": "vue-tsc",
+    "config:dev": "ncp .clasp-dev.json .clasp.json && ncp .env-dev.env .env",
+    "config:prod": "ncp .clasp-prod.json .clasp.json && ncp .env-prod.env .env",
+    "build": "npm run tsc && vite build",
+    "preview": "vite preview",
+    "push:clasp": "clasp push",
+    "push": "npm run lint && npm run format && npm run test && npm run build && npm run push:clasp",
+    "push:dev": "npm run config:dev && npm run push",
+    "push:prod": "npm run config:prod && npm run push",
+    "deploy": "clasp deploy",
+    "redeploy": "dotenv cross-var \"clasp deploy -i $GAS_DEPLOYMENT_ID\"",
+    "open:script": "clasp open",
+    "open:web": "clasp open --webapp",
+    "test": "echo 'no-test'",
+    "lint": "eslint --ext .ts,.vue src/ && eslint --ext .ts server",
+    "format": "prettier --write \"**/*.+(js|json|ts|vue)\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luthpg/clasp-simple-template.git"
+  "dependencies": {
+    "vue": "^3.3.11"
   },
-  "keywords": [
-    "clasp",
-    "GoogleAppsScript"
-  ],
-  "author": "luthpg",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/luthpg/clasp-simple-template/issues"
-  },
-  "homepage": "https://github.com/luthpg/clasp-simple-template#readme",
   "devDependencies": {
     "@google/clasp": "^2.4.2",
-    "@types/google-apps-script": "^1.0.59",
-    "@types/jest": "^29.5.0",
-    "@types/node": "^18.15.10",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "eslint": "^8.36.0",
+    "@meforma/vue-toaster": "^1.3.0",
+    "@types/google-apps-script": "^1.0.78",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vitejs/plugin-vue": "^4.6.1",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "jest": "^29.5.0",
-    "prettier": "^2.8.7",
-    "prettier-eslint": "^15.0.1",
-    "ts-jest": "^29.0.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.2"
+    "eslint-plugin-vue": "^9.19.2",
+    "ncp": "^2.0.0",
+    "prettier": "^3.1.1",
+    "prettier-eslint": "^16.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-singlefile": "^0.13.5",
+    "vue-tsc": "^1.8.25"
   }
 }

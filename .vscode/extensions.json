@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "Vue.vscode-typescript-vue-plugin",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "pranaygp.vscode-css-peek",
+    "dbaeumer.vscode-eslint",
+    "bradgashler.htmltagwrap",
+    "oderwat.indent-rainbow",
+    "ionutvmi.path-autocomplete",
+    "chakrounanas.turbo-console-log",
+    "vscode-icons-team.vscode-icons",
+    "dariofuzinato.vue-peek",
+    "mosapride.zenkaku",
+    "titiaiev.vue-docs",
+    "esbenp.prettier-vscode",
+    "ecmel.vscode-html-css",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
