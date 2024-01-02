@@ -4,8 +4,8 @@ interface ToasterOptions {
   position?: 'top' | 'bottom' | 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left';
   duration?: number | false;
   dismissible?: boolean;
-  onClick?: Function;
-  onClose?: Function;
+  onClick?: (...arg: any[]) => any;
+  onClose?: (...arg: any[]) => any;
   queue?: boolean;
   maxToasts?: number | false;
   pauseOnHover?: boolean;
@@ -20,4 +20,4 @@ export interface Toast {
   info: ToasterFunction;
   clear: () => void;
 }
-export const Toast = inject('toast') as Toast;
+export default inject('toast') as Toast;

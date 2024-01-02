@@ -1,10 +1,11 @@
+root: true
+
 env:
   browser: true
   es2021: true
   'vue/setup-compiler-macros': true
   'googleappsscript/googleappsscript': true
-
-parser: 'vue-eslint-parser'
+  'vitest-globals/env': true
 
 parserOptions:
   parser: '@typescript-eslint/parser'
@@ -12,15 +13,42 @@ parserOptions:
 
 plugins:
   - vue
+  - '@typescript-eslint'
+  - vitest
   - googleappsscript
 
 extends:
   - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:vue/base'
+  - 'plugin:vue/vue3-essential'
   - 'plugin:vue/vue3-recommended'
   - 'plugin:vue/vue3-strongly-recommended'
-  - 'plugin:vue/vue3-essential'
-  - 'plugin:vue/base'
+  - 'plugin:vitest/recommended'
+  - 'plugin:vitest-globals/recommended'
   - 'prettier'
 
 rules:
   'no-unused-vars': 'off'
+  'vitest/consistent-test-it':
+    - 'error'
+    - 'fn': 'test'
+  'vitest/require-top-level-describe':
+    - error
+  'vue/component-tags-order':
+    - 'error'
+    - 'order':
+        - 'script'
+        - 'template'
+        - 'style'
+  # '@typescript-eslint/typedef':
+  #   - 'error'
+  #   - 'variableDeclaration': true
+  #   - 'memberVariableDeclaration': true
+  #   - 'propertyDeclaration': true
+  #   - 'variableDeclarationIgnoreFunction': true
+  #   - 'arrayDestructuring': true
+  #   - 'objectDestructuring': true
+  #   - 'parameter': true
+  #   - 'arrowParameter': true
+  '@typescript-eslint/no-explicit-any': 0

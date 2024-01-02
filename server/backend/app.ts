@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-undef */
 /**
  * HTML内でページ読み込み時にパラメータ読み込みする場合は、以下で対応
  * ```js

@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import './assets/style/global.css';
-// @ts-expect-error
+// @ts-expect-error vue-toaster library is Plain Javascript
 import Toast from '@meforma/vue-toaster';
 import Vuetify from './helpers/vuetify';
 import App from './App.vue';

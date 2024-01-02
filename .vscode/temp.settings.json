@@ -3,5 +3,12 @@
   "breadcrumbs.enabled": true,
   "editor.fontSize": 16,
   "editor.indentSize": 2,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": ["googleappsscript", "meforma", "singlefile", "vitest"]
 }

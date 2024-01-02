@@ -1,7 +1,13 @@
 <script setup lang="ts">
   const props = defineProps({
-    onClick: Function,
-    icon: String,
+    onClick: {
+      type: Function,
+      default: () => void 0,
+    },
+    icon: {
+      type: String,
+      default: '',
+    },
   });
 </script>
 

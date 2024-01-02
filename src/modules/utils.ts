@@ -1,22 +1,12 @@
-import { ref, computed } from 'vue';
-
-export const loading = ref(false);
-export const whileLoading = async (callback: Function, errorHander?: (e: Error) => void) => {
-  loading.value = true;
-  try {
-    await callback();
-  } catch (e: any) {
-    errorHander && errorHander(e);
-  }
-  loading.value = false;
-};
+/* eslint-disable no-undef */
+import { computed } from 'vue';
 
 export const isOnline = () =>
-  // @ts-expect-error
+  // @ts-expect-error 'Cause ONLY AppsScript Window has `google` member
   window.navigator.onLine && typeof window.google !== 'undefined';
 
 export const ServerScript = computed(() => {
-  const temp: { [key: string]: Function } = {};
+  const temp: { [key: string]: (...arg: []) => Promise<any> } = {};
   for (const methodName in google.script.run) {
     const method = google.script.run[methodName];
     if (typeof method !== 'function') continue;

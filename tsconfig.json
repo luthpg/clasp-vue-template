@@ -22,9 +22,9 @@
     "noFallthroughCasesInSwitch": true,
 
     "paths": {
-      "~/*": ["./*"]
+      "@/*": ["./src/*"]
     },
-    "types": ["@types/node", "@types/google-apps-script"]
+    "types": ["@types/node", "@types/google-apps-script", "vitest/globals"]
   },
-  "include": ["src", "server", "types"]
+  "include": ["src", "server", "types", "test"]
 }

@@ -15,6 +15,7 @@
     "titiaiev.vue-docs",
     "esbenp.prettier-vscode",
     "ecmel.vscode-html-css",
-    "ms-vscode.vscode-typescript-next"
+    "ms-vscode.vscode-typescript-next",
+    "zixuanchen.vitest-explorer"
   ]
 }
