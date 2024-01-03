@@ -23,8 +23,8 @@
     "open:script": "clasp open",
     "open:web": "clasp open --webapp",
     "test": "vitest",
-    "lint": "eslint --ext .ts,.vue src/ && eslint --ext .ts server",
-    "fix": "eslint --fix --ext .ts,.vue src/ && eslint --fix --ext .ts server",
+    "lint": "eslint --ext .ts,.vue src/ && eslint --ext .ts server/ && eslint --ext .ts test/",
+    "fix": "eslint --fix --ext .ts,.vue src/ && eslint --fix --ext .ts server/ && eslint --fix --ext .ts test/",
     "format": "prettier --write \"**/*.+(js|json|ts|vue)\""
   },
   "dependencies": {

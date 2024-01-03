@@ -1,6 +1,6 @@
 import { createApp, type App } from 'vue';
 
-export function withSetup<T>(composable: Function): [T | undefined, App<Element>] {
+export function withSetup<T>(composable: () => T): [T | undefined, App<Element>] {
   let result;
   const app = createApp({
     setup() {
